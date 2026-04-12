@@ -48,7 +48,7 @@
   top: 5%;
   border-radius: 6px;
   box-shadow: 0 2px 26px rgba(0, 0, 0, 0.12);
-  font-family: "Dancing Script", cursive;
+  font-family:"Great Vibes", cursive;
 }
 
 .letter:after {
@@ -66,6 +66,7 @@
   width: 80%;
   height: 14%;
   background-color: #ffe6e6; /* Light romantic tone */
+  font-family: "Great Vibes", cursive;
 }
 
 .words.line1 {
