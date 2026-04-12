@@ -1,23 +1,31 @@
-/* ENVELOPE */
 #envelope {
   position: relative;
   width: 280px;
   height: 180px;
-  margin: auto;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  margin-left: auto;
+  margin-right: auto;
   top: 150px;
   background-color: #d9534f;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* FRONT */
+/* Front */
 .front {
   position: absolute;
+  width: 0;
+  height: 0;
+  z-index: 3;
 }
 
 .flap {
   border-left: 140px solid transparent;
   border-right: 140px solid transparent;
+  border-bottom: 82px solid transparent;
   border-top: 98px solid #d9534f;
   transform-origin: top;
+  pointer-events: none;
 }
 
 .pocket {
@@ -25,36 +33,80 @@
   border-right: 140px solid #f5a3a2;
   border-bottom: 90px solid #ff6f61;
   border-top: 90px solid transparent;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
 }
 
-/* LETTER */
+/* Letter */
 .letter {
   position: relative;
-  background: white;
+  background-color: #fff;
   width: 90%;
+  margin-left: auto;
+  margin-right: auto;
   height: 90%;
-  margin: auto;
   top: 5%;
   border-radius: 6px;
+  box-shadow: 0 2px 26px rgba(0, 0, 0, 0.12);
   font-family: "Dancing Script", cursive;
 }
 
-/* TEXT LINES */
 .words {
   position: absolute;
   left: 10%;
   width: 80%;
+  height: 14%;
+  background-color: #ffe6e6;
 }
 
-.words.line1 { top: 10%; }
-.words.line2 { top: 30%; text-align: center; }
-.words.line3 { top: 50%; text-align: center; }
-.words.line4 { top: 70%; text-align: center; }
+.words.line1 {
+  top: 10%;
+  font-size: 0.5rem;
+  width: 20%;
+  height: 7%;
+}
 
-/* OPEN/CLOSE ANIMATION */
+.words.line2 { top: 30%; }
+.words.line3 { top: 50%; }
+.words.line4 { top: 70%; }
+
+/* Hearts */
+.hearts {
+  position: absolute;
+  top: 90px;
+  left: 0;
+  right: 0;
+}
+
+.heart {
+  position: absolute;
+  bottom: 0;
+  right: 10%;
+}
+
+.heart:before,
+.heart:after {
+  position: absolute;
+  content: "";
+  width: 25px;
+  height: 40px;
+  background: red;
+  border-radius: 50px 50px 0 0;
+}
+
+.heart:before {
+  left: 25px;
+  transform: rotate(-45deg);
+}
+
+.heart:after {
+  left: 0;
+  transform: rotate(45deg);
+}
+
+/* Animation */
 .open .flap {
   transform: rotateX(180deg);
-  transition: 0.4s;
 }
 
 .open .letter {
@@ -66,18 +118,35 @@
   transform: translateY(0);
 }
 
-/* BACKGROUND */
-body {
-  background-color: #f0e6f6;
+.open .heart {
+  animation: floatUp 3s linear infinite;
 }
 
-/* BUTTON */
+@keyframes floatUp {
+  0% { top: 0; opacity: 1; }
+  100% { top: -300px; opacity: 0; }
+}
+
+/* Buttons */
 .reset {
   text-align: center;
+  margin-top: 50px;
 }
 
 .reset button {
   border: 2px solid #d9534f;
   padding: 10px;
+  margin: 5px;
   cursor: pointer;
+  background: transparent;
+}
+
+.reset button:hover {
+  background: #d9534f;
+  color: white;
+}
+
+/* Body */
+body {
+  background-color: #f0e6f6;
 }
