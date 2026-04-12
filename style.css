@@ -6,11 +6,12 @@ body {
 /* Envelope */
 #envelope {
   position: relative;
-  width: 400px;
-  height: 260px;
+  width: 420px;
+  height: 280px;
   margin: auto;
-  top: 120px;
+  top: 80px;
   background-color: #d9534f;
+  border-radius: 10px;
 }
 
 /* Front */
@@ -19,18 +20,19 @@ body {
 }
 
 .flap {
-  border-left: 200px solid transparent;
-  border-right: 200px solid transparent;
-  border-top: 130px solid #d9534f;
+  border-left: 210px solid transparent;
+  border-right: 210px solid transparent;
+  border-top: 140px solid #d9534f;
   transform-origin: top;
   transition: 0.4s;
+  z-index: 3;
 }
 
 .pocket {
-  border-left: 200px solid #f5a3a2;
-  border-right: 200px solid #f5a3a2;
-  border-bottom: 130px solid #ff6f61;
-  border-top: 130px solid transparent;
+  border-left: 210px solid #f5a3a2;
+  border-right: 210px solid #f5a3a2;
+  border-bottom: 140px solid #ff6f61;
+  border-top: 140px solid transparent;
 }
 
 /* Letter */
@@ -74,7 +76,7 @@ body {
 /* Hearts */
 .hearts {
   position: absolute;
-  top: 90px;
+  top: 100px;
   left: 0;
   right: 0;
 }
@@ -89,15 +91,15 @@ body {
 .heart:after {
   content: "";
   position: absolute;
-  width: 20px;
-  height: 30px;
+  width: 22px;
+  height: 32px;
   background: red;
   border-radius: 50px 50px 0 0;
 }
 
 .heart:before {
   transform: rotate(-45deg);
-  left: 10px;
+  left: 11px;
 }
 
 .heart:after {
@@ -111,7 +113,7 @@ body {
 
 @keyframes floatUp {
   0% { top: 0; opacity: 1; }
-  100% { top: -300px; opacity: 0; }
+  100% { top: -320px; opacity: 0; }
 }
 
 /* Buttons */
@@ -127,4 +129,11 @@ body {
   cursor: pointer;
   background: transparent;
   color: #d9534f;
+  font-size: 16px;
+  border-radius: 6px;
+}
+
+.reset button:hover {
+  background-color: #d9534f;
+  color: white;
 }
