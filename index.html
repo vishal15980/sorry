@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Sorry Letter for Mau 💓</title>
+  <meta charset="UTF-8">
+  <title>Sorry Letter 💙</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-
-<h2>Sorry Letter for Mau 💓</h2>
 
 <div class="envlope-wrapper">
   <div id="envelope" class="close">
@@ -18,42 +19,31 @@
     <div class="front flap"></div>
     <div class="front pocket"></div>
 
-    <!-- LETTER -->
     <div class="letter">
-      <p>To: Mau 💙</p>
-      <p>I’m sorry Bala 🥺</p>
-      <p>I didn’t mean to hurt you last night 💔</p>
-      <p>Please forgive me ❤️</p>
-    </div>
+      <div class="words line1">To: Mau 💙</div>
 
-    <!-- HEARTS -->
-    <div class="hearts">
-      <div class="heart a1"></div>
-      <div class="heart a2"></div>
-      <div class="heart a3"></div>
+      <div class="words line2">
+        Dear Bala, I'm really sorry 🥺
+      </div>
+
+      <div class="words line3">
+        Last night I didn’t mean to hurt you 💔
+      </div>
+
+      <div class="words line4">
+        I love you so much, please forgive me ❤️
+      </div>
     </div>
 
   </div>
 </div>
 
 <div class="reset">
-  <button onclick="openEnvelope()">OPEN</button>
-  <button onclick="closeEnvelope()">CLOSE</button>
+  <button onclick="openEnvelope()">Open</button>
+  <button onclick="closeEnvelope()">Close</button>
 </div>
 
-<script>
-function openEnvelope() {
-  const env = document.getElementById("envelope");
-  env.classList.remove("close");
-  env.classList.add("open");
-}
-
-function closeEnvelope() {
-  const env = document.getElementById("envelope");
-  env.classList.remove("open");
-  env.classList.add("close");
-}
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
