@@ -1,121 +1,126 @@
 body {
   background-color: #f0e6f6;
-  font-family: "Dancing Script", cursive, Arial;
+  font-family: "Dancing Script", cursive;
   text-align: center;
 }
 
-/* Envelope */
+/* Envelope box */
 #envelope {
   position: relative;
-  width: 400px;
-  height: 260px;
+  width: 300px;
+  height: 200px;
   margin: auto;
-  top: 50px;
+  top: 60px;
 }
 
-/* Front */
-.front {
-  position: absolute;
-  width: 0;
-  height: 0;
-}
-
+/* Flap */
 .flap {
-  border-left: 200px solid transparent;
-  border-right: 200px solid transparent;
-  border-top: 130px solid #d9534f;
+  position: absolute;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-top: 100px solid #d9534f;
   transform-origin: top;
-  transition: 0.4s;
-  z-index: 5;
+  transition: 0.5s;
+  z-index: 3;
 }
 
+/* Pocket */
 .pocket {
-  border-left: 200px solid #f5a3a2;
-  border-right: 200px solid #f5a3a2;
-  border-bottom: 130px solid #ff6f61;
-  border-top: 130px solid transparent;
+  position: absolute;
+  border-left: 150px solid #f5a3a2;
+  border-right: 150px solid #f5a3a2;
+  border-bottom: 100px solid #ff6f61;
+  border-top: 100px solid transparent;
+  top: 0;
 }
 
 /* Letter */
 .letter {
   position: absolute;
+  width: 80%;
+  height: 80%;
   background: white;
-  width: 90%;
-  height: 90%;
-  left: 5%;
-  top: 5%;
+  left: 10%;
+  top: 10%;
   border-radius: 10px;
-  padding-top: 20px;
-  font-size: 20px;
-  transition: 0.4s;
-  z-index: 2;
+  padding: 10px;
+  transition: 0.5s;
+  z-index: 1;
 }
 
-/* CLOSED STATE */
+/* CLOSED */
 .close .flap {
   transform: rotateX(0deg);
 }
 
 .close .letter {
-  transform: translateY(0px);
+  transform: translateY(0);
 }
 
-/* OPEN STATE */
+/* OPEN */
 .open .flap {
   transform: rotateX(180deg);
 }
 
 .open .letter {
-  transform: translateY(-120px);
+  transform: translateY(-100px);
 }
 
-/* Hearts */
+/* HEARTS */
 .hearts {
   position: absolute;
-  top: 100px;
-  left: 0;
-  right: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
 }
 
+/* Heart shape */
 .heart {
   position: absolute;
-  bottom: 0;
-  left: 50%;
+  width: 20px;
+  height: 20px;
+  background: red;
+  transform: rotate(45deg);
 }
 
-.heart:before,
-.heart:after {
+.heart::before,
+.heart::after {
   content: "";
   position: absolute;
   width: 20px;
-  height: 30px;
+  height: 20px;
   background: red;
-  border-radius: 50px 50px 0 0;
+  border-radius: 50%;
 }
 
-.heart:before {
-  transform: rotate(-45deg);
-  left: 10px;
-}
-
-.heart:after {
-  transform: rotate(45deg);
+.heart::before {
+  top: -10px;
   left: 0;
 }
 
-/* Animate ONLY when open */
+.heart::after {
+  left: -10px;
+  top: 0;
+}
+
+/* Heart animation ONLY when open */
 .open .heart {
   animation: floatUp 3s linear infinite;
 }
 
+.a1 { left: -20px; }
+.a2 { left: 0px; }
+.a3 { left: 20px; }
+
+/* Floating animation */
 @keyframes floatUp {
-  0% { top: 0; opacity: 1; }
-  100% { top: -300px; opacity: 0; }
+  0% { transform: translateY(0) rotate(45deg); opacity: 1; }
+  100% { transform: translateY(-200px) rotate(45deg); opacity: 0; }
 }
 
 /* Buttons */
 .reset {
-  margin-top: 80px;
+  margin-top: 100px;
 }
 
 button {
