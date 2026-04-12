@@ -1,137 +1,118 @@
 body {
   background-color: #f0e6f6;
-  font-family: "Dancing Script", cursive;
-  text-align: center;
+  font-family: "Dancing Script", cursive, Arial, sans-serif;
 }
 
-/* Envelope box */
+/* Envelope */
 #envelope {
   position: relative;
-  width: 300px;
-  height: 200px;
+  width: 280px;
+  height: 180px;
   margin: auto;
-  top: 60px;
+  top: 150px;
+  background-color: #d9534f;
+  border-radius: 6px;
 }
 
-/* Flap */
+/* Front */
+.front {
+  position: absolute;
+}
+
 .flap {
-  position: absolute;
-  border-left: 150px solid transparent;
-  border-right: 150px solid transparent;
-  border-top: 100px solid #d9534f;
+  border-left: 140px solid transparent;
+  border-right: 140px solid transparent;
+  border-top: 98px solid #d9534f;
   transform-origin: top;
-  transition: 0.5s;
-  z-index: 3;
+  transition: 0.4s;
 }
 
-/* Pocket */
 .pocket {
-  position: absolute;
-  border-left: 150px solid #f5a3a2;
-  border-right: 150px solid #f5a3a2;
-  border-bottom: 100px solid #ff6f61;
-  border-top: 100px solid transparent;
-  top: 0;
+  border-left: 140px solid #f5a3a2;
+  border-right: 140px solid #f5a3a2;
+  border-bottom: 90px solid #ff6f61;
+  border-top: 90px solid transparent;
 }
 
 /* Letter */
 .letter {
-  position: absolute;
-  width: 80%;
-  height: 80%;
+  position: relative;
   background: white;
+  width: 90%;
+  height: 90%;
+  margin: auto;
+  top: 5%;
+  border-radius: 6px;
+  text-align: center;
+  padding-top: 10px;
+}
+
+/* Text */
+.words {
+  position: absolute;
   left: 10%;
+  width: 80%;
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.words.line1 {
   top: 10%;
-  border-radius: 10px;
-  padding: 10px;
-  transition: 0.5s;
-  z-index: 1;
+  font-size: 14px;
 }
 
-/* CLOSED */
-.close .flap {
-  transform: rotateX(0deg);
+.words.line2 {
+  top: 30%;
+  background-color: #ffe6e6;
+  padding: 5px;
+  border-radius: 5px;
 }
 
-.close .letter {
-  transform: translateY(0);
+.words.line3 {
+  top: 50%;
+  background-color: #ffe6e6;
+  padding: 5px;
+  border-radius: 5px;
 }
 
-/* OPEN */
+.words.line4 {
+  top: 70%;
+  background-color: #ffe6e6;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+/* Animation */
 .open .flap {
   transform: rotateX(180deg);
 }
 
 .open .letter {
   transform: translateY(-100px);
+  transition: 0.4s;
 }
 
-/* HEARTS */
-.hearts {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 0;
-}
-
-/* Heart shape */
-.heart {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background: red;
-  transform: rotate(45deg);
-}
-
-.heart::before,
-.heart::after {
-  content: "";
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background: red;
-  border-radius: 50%;
-}
-
-.heart::before {
-  top: -10px;
-  left: 0;
-}
-
-.heart::after {
-  left: -10px;
-  top: 0;
-}
-
-/* Heart animation ONLY when open */
-.open .heart {
-  animation: floatUp 3s linear infinite;
-}
-
-.a1 { left: -20px; }
-.a2 { left: 0px; }
-.a3 { left: 20px; }
-
-/* Floating animation */
-@keyframes floatUp {
-  0% { transform: translateY(0) rotate(45deg); opacity: 1; }
-  100% { transform: translateY(-200px) rotate(45deg); opacity: 0; }
+.close .letter {
+  transform: translateY(0);
 }
 
 /* Buttons */
 .reset {
-  margin-top: 100px;
+  text-align: center;
+  margin-top: 50px;
 }
 
-button {
-  padding: 10px 20px;
-  margin: 10px;
+.reset button {
   border: 2px solid #d9534f;
-  background: white;
+  padding: 10px;
+  margin: 5px;
   cursor: pointer;
+  background: transparent;
+  color: #d9534f;
 }
 
-button:hover {
-  background: #d9534f;
+.reset button:hover {
+  background-color: #d9534f;
   color: white;
 }
