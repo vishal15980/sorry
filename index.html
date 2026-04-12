@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Sorry Letter for Mau 💓</title>
+<meta charset="UTF-8">
+<title>Sorry Letter for Mau 💓</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=300">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -13,12 +13,12 @@
 <h2>Sorry Letter for Mau 💓</h2>
 
 <div class="envlope-wrapper">
-  <!-- IMPORTANT: close class -->
   <div id="envelope" class="close">
 
     <div class="front flap"></div>
     <div class="front pocket"></div>
 
+    <!-- LETTER -->
     <div class="letter">
       <p>To: Mau 💙</p>
       <p>I’m sorry Bala 🥺</p>
@@ -26,7 +26,7 @@
       <p>Please forgive me ❤️</p>
     </div>
 
-    <!-- Hearts -->
+    <!-- HEARTS -->
     <div class="hearts">
       <div class="heart a1"></div>
       <div class="heart a2"></div>
@@ -36,7 +36,6 @@
   </div>
 </div>
 
-<!-- BUTTONS -->
 <div class="reset">
   <button onclick="openEnvelope()">OPEN</button>
   <button onclick="closeEnvelope()">CLOSE</button>
@@ -44,13 +43,15 @@
 
 <script>
 function openEnvelope() {
-  document.getElementById("envelope").classList.remove("close");
-  document.getElementById("envelope").classList.add("open");
+  const env = document.getElementById("envelope");
+  env.classList.remove("close");
+  env.classList.add("open");
 }
 
 function closeEnvelope() {
-  document.getElementById("envelope").classList.remove("open");
-  document.getElementById("envelope").classList.add("close");
+  const env = document.getElementById("envelope");
+  env.classList.remove("open");
+  env.classList.add("close");
 }
 </script>
 
