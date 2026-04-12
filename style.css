@@ -1,17 +1,17 @@
 body {
   background-color: #f0e6f6;
-  font-family: "Dancing Script", cursive;
+  font-family: "Dancing Script", cursive, Arial, sans-serif;
 }
 
-/* Envelope */
+/* Bigger Envelope */
 #envelope {
   position: relative;
-  width: 280px;
-  height: 180px;
+  width: 400px;
+  height: 260px;
   margin: auto;
-  top: 150px;
+  top: 120px;
   background-color: #d9534f;
-  border-radius: 6px;
+  border-radius: 10px;
 }
 
 /* Front */
@@ -20,18 +20,18 @@ body {
 }
 
 .flap {
-  border-left: 140px solid transparent;
-  border-right: 140px solid transparent;
-  border-top: 98px solid #d9534f;
+  border-left: 200px solid transparent;
+  border-right: 200px solid transparent;
+  border-top: 130px solid #d9534f;
   transform-origin: top;
   transition: 0.4s;
 }
 
 .pocket {
-  border-left: 140px solid #f5a3a2;
-  border-right: 140px solid #f5a3a2;
-  border-bottom: 90px solid #ff6f61;
-  border-top: 90px solid transparent;
+  border-left: 200px solid #f5a3a2;
+  border-right: 200px solid #f5a3a2;
+  border-bottom: 130px solid #ff6f61;
+  border-top: 130px solid transparent;
 }
 
 /* Letter */
@@ -42,9 +42,10 @@ body {
   height: 90%;
   margin: auto;
   top: 5%;
-  border-radius: 6px;
+  border-radius: 8px;
   text-align: center;
-  padding-top: 10px;
+  padding-top: 20px;
+  font-size: 20px;
 }
 
 /* Text */
@@ -53,34 +54,34 @@ body {
   left: 10%;
   width: 80%;
   color: #333;
-  font-size: 16px;
   font-weight: bold;
+  font-family: "Dancing Script", cursive, Arial, sans-serif;
 }
 
 .words.line1 {
   top: 10%;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .words.line2 {
   top: 30%;
   background-color: #ffe6e6;
-  padding: 5px;
-  border-radius: 5px;
+  padding: 8px;
+  border-radius: 6px;
 }
 
 .words.line3 {
   top: 50%;
   background-color: #ffe6e6;
-  padding: 5px;
-  border-radius: 5px;
+  padding: 8px;
+  border-radius: 6px;
 }
 
 .words.line4 {
   top: 70%;
   background-color: #ffe6e6;
-  padding: 5px;
-  border-radius: 5px;
+  padding: 8px;
+  border-radius: 6px;
 }
 
 /* Animation */
@@ -89,7 +90,7 @@ body {
 }
 
 .open .letter {
-  transform: translateY(-100px);
+  transform: translateY(-120px);
   transition: 0.4s;
 }
 
@@ -100,16 +101,18 @@ body {
 /* Buttons */
 .reset {
   text-align: center;
-  margin-top: 50px;
+  margin-top: 60px;
 }
 
 .reset button {
   border: 2px solid #d9534f;
-  padding: 10px;
-  margin: 5px;
+  padding: 12px 20px;
+  margin: 10px;
   cursor: pointer;
   background: transparent;
   color: #d9534f;
+  font-size: 16px;
+  border-radius: 6px;
 }
 
 .reset button:hover {
