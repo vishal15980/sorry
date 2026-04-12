@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Sorry Letter 💙</title>
+<meta charset="UTF-8">
+<title>Sorry Letter 💙</title>
 
-  <!-- Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -51,7 +48,17 @@
   <button onclick="closeEnvelope()">CLOSE</button>
 </div>
 
-<script src="script.js"></script>
+<script>
+function openEnvelope() {
+  document.getElementById("envelope").classList.remove("close");
+  document.getElementById("envelope").classList.add("open");
+}
+
+function closeEnvelope() {
+  document.getElementById("envelope").classList.remove("open");
+  document.getElementById("envelope").classList.add("close");
+}
+</script>
 
 </body>
 </html>
